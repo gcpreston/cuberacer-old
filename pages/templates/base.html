@@ -30,7 +30,7 @@
                     <li><a href="{% url 'pages:logout' %}">Logout</a></li>
                     {% else %}
                     <li><a href="{% url 'pages:login' %}">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="{% url 'pages:register' %}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
