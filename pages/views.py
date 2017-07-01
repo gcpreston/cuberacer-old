@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -9,6 +10,9 @@ def register(request):
         form = forms.RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'])
+            login(request, new_user)
             return redirect('/')
         else:
             form = forms.RegistrationForm()
