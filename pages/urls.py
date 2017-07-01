@@ -7,6 +7,6 @@ app_name = 'pages'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^login/$', login, {'template_name': 'pages/login.html'}, name='login'),
-    url(r'^logout/$', logout, {'template_name': 'pages/logout.html'}, name='logout'),
+    url(r'^logout/$', logout, {'template_name': 'pages/logout.html', 'next_page': '/'}, name='logout'),
     url(r'^register/$', views.register, name='register'),
 ]
