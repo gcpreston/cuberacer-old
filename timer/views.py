@@ -1,10 +1,9 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def solo(request):
-    return HttpResponse('Solo')
+    return render(request, 'timer/solo.html')
 
 
 def multi(request):
-    return HttpResponse('Multi')
+    return render(request, 'timer/multi.html')

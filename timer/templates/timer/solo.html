@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Solo</title>
+{% load static %}
+<script type="text/javascript" src="{% static 'timer/timer.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p id="time"></p>
+    <button onclick="startTime()">Start Timer</button>
+    <button onclick="stopTime()">Stop Timer</button>
+</div>
+{% endblock %}
