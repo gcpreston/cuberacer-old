@@ -1,8 +1,13 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def solo(request):
-    return render(request, 'timer/solo.html')
+    if request.method == 'POST':
+        print(request.POST.get('value1'))
+        return HttpResponse(status=201)
+    else:
+        return render(request, 'timer/solo.html')
 
 
 def multi(request):

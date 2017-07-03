@@ -2,6 +2,11 @@
 
 {% block head %}
 <title>Solo</title>
+<script type="text/javascript">
+    function submitScores() {
+        $.post('/timer/solo/', {value1: 'Value #1', value2: 'Value #2', csrfmiddlewaretoken: '{{ csrf_token }}'});
+    }
+</script>
 {% load static %}
 <script type="text/javascript" src="{% static 'timer/timer.js' %}"></script>
 {% endblock %}
@@ -9,5 +14,7 @@
 {% block body %}
 <div class="container">
     <span id="time">0</span>
+    <br>
+    <button type="button" onclick="submitScores()">Submit</button>
 </div>
 {% endblock %}
