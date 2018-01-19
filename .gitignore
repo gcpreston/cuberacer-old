@@ -105,3 +105,6 @@ ENV/
 
 # Django secret key
 secret_key.txt
+
+# PostgreSQL password
+pg_password.txt

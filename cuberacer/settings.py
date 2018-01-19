@@ -77,10 +77,17 @@ WSGI_APPLICATION = 'cuberacer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+with open('pg_password.txt') as pg_password_file:
+    pg_password = pg_password_file.read()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cuberacer',
+        'USER': 'admin',
+        'PASSWORD': pg_password,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
